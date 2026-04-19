@@ -1,65 +1,234 @@
-import Image from "next/image";
+const serviceCards = [
+  {
+    title: "Product Engineering",
+    text:
+      "We plan, design, and ship web applications that are reliable, fast, and made for real daily usage.",
+  },
+  {
+    title: "Platform Architecture",
+    text:
+      "We build the systems behind the interface so products stay maintainable as users, features, and complexity grow.",
+  },
+  {
+    title: "Sub-Project Stewardship",
+    text:
+      "As a parent company, we support and evolve focused digital products under one disciplined engineering umbrella.",
+  },
+];
+
+const principles = [
+  {
+    title: "Clear scope",
+    text: "Start lean, solve the core problem, and avoid unnecessary layers.",
+  },
+  {
+    title: "Strong foundations",
+    text: "Prioritize stable architecture, readable code, and practical performance.",
+  },
+  {
+    title: "Long-term thinking",
+    text: "Ship software that can keep improving instead of being rebuilt from scratch.",
+  },
+];
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Define the right product",
+    text: "We align business goals, user needs, and technical boundaries before heavy implementation begins.",
+  },
+  {
+    number: "02",
+    title: "Build with discipline",
+    text: "Design systems, application logic, and interfaces are developed with clarity and maintainability in mind.",
+  },
+  {
+    number: "03",
+    title: "Support real growth",
+    text: "Once live, we refine, scale, and strengthen the product as usage expands.",
+  },
+];
 
 export default function Home() {
+  const year = new Date().getFullYear();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="page" id="top">
+      <div className="shell">
+        {/* Simple top bar with lightweight site navigation */}
+        <header className="topbar">
+          <div className="topbarInner">
+            <div className="brandBlock">
+              <span className="brand">Latten Technologies, LLC</span>
+              <span className="tag">
+                Parent company • software engineering • web applications
+              </span>
+            </div>
+
+            <nav className="nav" aria-label="Primary navigation">
+              <a href="#about">About</a>
+              <a href="#services">Services</a>
+              <a href="#approach">Approach</a>
+              <a href="#contact">Contact</a>
+            </nav>
+          </div>
+        </header>
+
+        {/* Hero section: concise positioning with brutalist visual framing */}
+        <section className="hero">
+          <div className="heroGrid">
+            <div className="heroCard">
+              <span className="eyebrow">Minimal systems. Serious execution.</span>
+              <h1 className="heroTitle">Software for products that need to last.</h1>
+              <p className="heroText">
+                Latten Technologies, LLC is a parent company and engineering studio
+                focused on building clean, scalable web applications for real-world
+                users. We keep the process simple, the systems durable, and the
+                design intentional.
+              </p>
+
+              <div className="heroActions">
+                <a className="primaryAction" href="#services">
+                  View services
+                </a>
+                <a className="secondaryAction" href="mailto:jlatten@lattentechnologies.com">
+                  jlatten@lattentechnologies.com
+                </a>
+              </div>
+            </div>
+
+            {/* Supporting panel with company positioning points */}
+            <aside className="panel" aria-label="Company highlights">
+              <h2 className="panelHeading">At a glance</h2>
+              <ul className="panelList">
+                <li>
+                  <span className="panelLabel">Structure</span>
+                  <span className="panelValue">Parent company for focused sub-projects</span>
+                </li>
+                <li>
+                  <span className="panelLabel">Specialty</span>
+                  <span className="panelValue">Modern web apps used by active audiences</span>
+                </li>
+                <li>
+                  <span className="panelLabel">Style</span>
+                  <span className="panelValue">Minimal, sharp, and built to scale</span>
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </section>
+
+        {/* Company overview */}
+        <section className="section" id="about">
+          <div className="sectionHeader">
+            <div className="sectionLabel">Overview</div>
+            <div>
+              <h2 className="sectionTitle">
+                A simple company site for a focused software business.
+              </h2>
+              <p className="sectionText">
+                We build and oversee digital products with an engineering-first
+                mindset. That means careful planning, straightforward systems, and
+                dependable delivery without noise.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Service cards */}
+        <section className="section" id="services">
+          <div className="sectionHeader">
+            <div className="sectionLabel">Services</div>
+            <div>
+              <h2 className="sectionTitle">What Latten Technologies does</h2>
+              <p className="sectionText">
+                From early product planning to scalable application delivery, the
+                goal is the same: build useful software with strong fundamentals.
+              </p>
+            </div>
+          </div>
+
+          <div className="cardGrid">
+            {serviceCards.map((card) => (
+              <article key={card.title} className="card">
+                <h3 className="cardTitle">{card.title}</h3>
+                <p className="cardText">{card.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Core working principles */}
+        <section className="section" id="approach">
+          <div className="sectionHeader">
+            <div className="sectionLabel">Approach</div>
+            <div>
+              <h2 className="sectionTitle">Built with restraint and intent</h2>
+              <p className="sectionText">
+                The design language is stripped back, but the engineering process is
+                thorough. Every decision should support clarity, performance, and growth.
+              </p>
+            </div>
+          </div>
+
+          <div className="cardGrid">
+            {principles.map((item) => (
+              <article key={item.title} className="card">
+                <h3 className="cardTitle">{item.title}</h3>
+                <p className="cardText">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Lightweight process timeline */}
+        <section className="section">
+          <div className="sectionHeader">
+            <div className="sectionLabel">Process</div>
+            <div>
+              <h2 className="sectionTitle">How we move from idea to product</h2>
+            </div>
+          </div>
+
+          <div className="processList">
+            {processSteps.map((step) => (
+              <article key={step.number} className="processItem">
+                <div className="stepNumber">{step.number}</div>
+                <div>
+                  <h3 className="processTitle">{step.title}</h3>
+                  <p className="processText">{step.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Final CTA for partnership or inquiry */}
+        <section className="cta" id="contact">
+          <div className="ctaInner">
+            <div>
+              <h2 className="ctaTitle">Need a product partner with engineering depth?</h2>
+              <p className="ctaText">
+                Latten Technologies, LLC helps turn product direction into dependable
+                web software with a clean foundation and a long shelf life.
+                Reach out at jlatten@lattentechnologies.com.
+              </p>
+            </div>
+
+            <a className="ctaAction" href="#top">
+              Back to top
+            </a>
+          </div>
+        </section>
+
+        {/* Minimal footer */}
+        <footer className="footer">
+          <div className="footerInner">
+            <span>© {year} Latten Technologies, LLC</span>
+            <span>Minimal web engineering in black, white, and gray.</span>
+          </div>
+        </footer>
+      </div>
+    </main>
   );
 }
