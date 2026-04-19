@@ -14,8 +14,19 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Latten Technologies, LLC",
-  description:
-    "Minimalist software engineering company website for Latten Technologies, LLC.",
+  description: "Latten Technologies, LLC is a product development consultancy focused on building high-quality software products with a strong emphasis on engineering excellence and thoughtful design.",
+  authors: [{ name: "Latten Technologies, LLC" }],
+  keywords: [
+    "Latten Technologies",
+    "Software Development",
+    "Product Development",
+    "Engineering Excellence",
+    "Thoughtful Design",
+    "Consultancy",
+    "Digital Products",
+    "Software Solutions",
+  ],
+  themeColor: "#000000",
 };
 
 export default function RootLayout({

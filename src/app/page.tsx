@@ -225,7 +225,7 @@ export default function Home() {
         <footer className="footer">
           <div className="footerInner">
             <span>© {year} Latten Technologies, LLC</span>
-            <span>Minimal web engineering in black, white, and gray.</span>
+            <span>Minimal web engineering for thoughtful digital products.</span>
           </div>
         </footer>
       </div>
